@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIVPN - Trial Key</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS for Styling --- */
+        body {
+            background: linear-gradient(135deg, #1f2641, #3c4b6f, #6e8898);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            font-family: 'Padauk', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .main-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;   /* စက်ဝိုင်း */
+            object-fit: cover;
+            display: block;
+            margin: 30px auto 20px;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .content-wrapper {
+            padding: 0 30px 30px;
+        }
+
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .trial-key-layout {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .trial-key-layout p {
+            font-size: 16px;
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+        }
+
+        .key-box {
+            background-color: #1f2641;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border: 1px dashed #6e8898;
+        }
+
+        .copy-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: #007B9E;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-card">
+        
+        <img src="https://raw.githubusercontent.com/UPKVPN/Zivpn/refs/heads/main/Screenshot_20251008_222929_Google%20Play%20Store.jpg" alt="VPN Security">
+        
+        <div class="content-wrapper">
+            
+            <a href="https://github.com/UPKVPN/Newsrc/releases/download/V.1.0.1/ZIVPN.V_2.0.3.Mod.by.JORYYUI68.apk" class="download-btn">ZIVPN ကို Download ရယူပါ</a>
+
+            <div class="trial-key-layout">
+                <p>
+                    <strong>အစမ်းသုံး Key</strong><br>
+                    အောက်က Key ကို copy ယူပြီး အစမ်းသုံးနိုင်ပါသည်။
+                </p>
+
+                <div id="trialKey" class="key-box">ZITRIAL-A4B8-C2D6-E9F1</div>
+                
+                <button onclick="copyKey()" class="copy-btn">Key ကို Copy ကူးပါ</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function copyKey() {
+            var keyText = document.getElementById("trialKey").innerText;
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(keyText).then(function () {
+                    alert("Key ကို အောင်မြင်စွာ Copy ကူးပြီးပါပြီ: " + keyText);
+                }).catch(function () {
+                    fallbackCopy(keyText);
+                });
+            } else {
+                fallbackCopy(keyText);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try {
+                document.execCommand("copy");
+                alert("Key ကို အောင်မြင်စွာ Copy ကူးပြီးပါပြီ: " + text);
+            } catch (e) {
+                alert("Copy မလုပ်နိုင်ပါ: " + e);
+            }
+            document.body.removeChild(ta);
+        }
+    </script>
+
+</body>
+</html>
