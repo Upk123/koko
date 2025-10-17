@@ -169,3 +169,67 @@
 
 </body>
 </html>
+            border: 1px dashed #6e8898;
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            background-color: #008CBA; /* Blue */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: #007B9E;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-card">
+        
+        <img src="https://raw.githubusercontent.com/UPKVPN/Zivpn/refs/heads/main/Screenshot_20251008_222929_Google%20Play%20Store.jpg" alt="VPN Security">
+        
+        <div class="content-wrapper">
+            
+            <a href="https://github.com/UPKVPN/Newsrc/releases/download/V.1.0.1/ZIVPN.V_2.0.3.Mod.by.JORYYUI68.apk" class="download-btn">ZIVPN ကို Download ရယူပါ</a>
+
+            <div class="trial-key-layout">
+                <p>
+                    <strong>အစမ်းသုံး Key</strong><br>
+                    အောက်က Key ကို copy ယူပြီး အစမ်းသုံးနိုင်ပါသည်။
+                </p>
+
+                <div id="trialKey" class="key-box">ZITRIAL-A4B8-C2D6-E9F1</div>
+                
+                <button onclick="copyKey()" class="copy-btn">Key ကို Copy ကူးပါ</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function copyKey() {
+            // Get the text from the key box
+            var keyText = document.getElementById("trialKey").innerText;
+            
+            // Use the navigator.clipboard API to copy the text
+            navigator.clipboard.writeText(keyText).then(function() {
+                // Success feedback
+                alert("Key ကို အောင်မြင်စွာ Copy ကူးပြီးပါပြီ: " + keyText);
+            }, function(err) {
+                // Error feedback
+                alert("Error: Could not copy text.");
+            });
+        }
+    </script>
+
+</body>
+</html>
